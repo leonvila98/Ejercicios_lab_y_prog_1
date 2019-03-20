@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define CANTIDAD_NUMEROS 3
+#define CANTIDAD_NUMEROS 5
 
 int pedirSumar(void);
 int promedioNumeros(void);
@@ -24,8 +24,8 @@ int main()
     resultado=valorA+valorB;
     printf("%d",resultado);
     return 0;
-}*/
-
+}
+*/
 int promedioNumeros(void)
 {
     int sumatoria=0;
@@ -33,7 +33,7 @@ int promedioNumeros(void)
     int promedio;
     int i;
 
-    for(i=0;i<=CANTIDAD_NUMEROS;i++)
+    for(i=0;i<CANTIDAD_NUMEROS;i++)
     {
         printf("\nIngrese numero:");
         scanf("%d",&numeroIngresado);
