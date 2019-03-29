@@ -92,6 +92,7 @@ int getChar(char *mensaje,char *mensajeError,char minimo,char maximo,int reinten
         do
         {
             printf("%s",mensaje);
+            __fpurge(stdin);
             scanf("%c",&buffer);
             if(isValidChar(buffer,minimo,maximo))
             {
