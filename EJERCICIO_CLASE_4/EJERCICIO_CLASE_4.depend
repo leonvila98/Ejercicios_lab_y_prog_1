@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1553821476 source:/home/alumno/Documentos/leon/EJERCICIO_CLASE_4/main.c
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+
+1553821476 /home/alumno/Documentos/leon/EJERCICIO_CLASE_4/utn.h
+	<stdio.h>
+	<stdlib.h>
+
+1553821479 source:/home/alumno/Documentos/leon/EJERCICIO_CLASE_4/utn.c
+	<stdio.h>
+	<stdlib.h>
+
