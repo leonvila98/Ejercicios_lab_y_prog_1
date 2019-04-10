@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1554856874 source:/home/alumno/Documentos/leonvila/EJERCICIO_CLASE_6/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1554856071 source:/home/alumno/Documentos/leonvila/EJERCICIO_CLASE_6/utn.c
+	<stdio.h>
+	<stdlib.h>
+
