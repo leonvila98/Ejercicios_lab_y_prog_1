@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1555004296 source:c:\users\lion\desktop\programacion\ejercicios_lab_y_prog_1\ejercicio_clase_6_b\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
