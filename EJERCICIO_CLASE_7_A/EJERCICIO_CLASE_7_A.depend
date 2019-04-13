@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1555162462 source:/home/alumno/Escritorio/Ejercicios_lab_y_prog_1-master/EJERCICIO_CLASE_7_A/utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1555164678 source:/home/alumno/Escritorio/Ejercicios_lab_y_prog_1-master/EJERCICIO_CLASE_7_A/main.c
+	<stdio.h>
+	<stdlib.h>
+
