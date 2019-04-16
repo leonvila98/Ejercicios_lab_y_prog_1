@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1514140574 source:c:\users\lion\desktop\programacion\ejercicios_lab_y_prog_1\ejercicio_clase_7_d\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1555438229 source:c:\users\lion\desktop\programacion\ejercicios_lab_y_prog_1\ejercicio_clase_7_d\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
