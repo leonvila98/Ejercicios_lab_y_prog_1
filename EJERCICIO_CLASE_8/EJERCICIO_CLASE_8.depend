@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1555453336 source:/home/alumno/Documentos/leon/Ejercicios_lab_y_prog_1/EJERCICIO_CLASE_8/main.c
+	<stdio.h>
+	<stdlib.h>
+
+1555461009 source:/home/alumno/Documentos/leon/Ejercicios_lab_y_prog_1/EJERCICIO_CLASE_8/utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
