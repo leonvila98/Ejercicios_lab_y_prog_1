@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1556061121 source:/home/alumno/Documentos/leonvila/Ejercicios_lab_y_prog_1-master/EJERCICIO_CLASE_9/utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1556067465 source:/home/alumno/Documentos/leonvila/Ejercicios_lab_y_prog_1-master/EJERCICIO_CLASE_9/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+
+1556058178 /home/alumno/Documentos/leonvila/Ejercicios_lab_y_prog_1-master/EJERCICIO_CLASE_9/utn.h
+
