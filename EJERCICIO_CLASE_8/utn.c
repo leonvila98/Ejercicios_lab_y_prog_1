@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#define TRUE 1
+#define FALSE 0
 
 int isValidInt(int numero,int max,int min)
 {
@@ -148,13 +150,12 @@ int getString ( char* msg,
     char bufferStr[4096];
     if(msg != NULL && msgError != NULL && minimo < maximo && reintentos>=0 && resultado != NULL)
     {
-
         do
         {
             printf("%s",msg);
             fgets(bufferStr,sizeof(bufferStr),stdin);
             bufferStr[strlen(bufferStr)-1] = '\0';
-            if(strlen(bufferStr)>=minimo && strlen(bufferStr) <maximo)
+            if(strlen(bufferStr)>=minimo && strlen(bufferStr)<=maximo)
             {
                 strncpy(resultado,bufferStr,maximo);
                 retorno = 0;
@@ -168,13 +169,13 @@ int getString ( char* msg,
 }
 int isValidName (char* cadena)
 {
-    int retorno = 1;
+    int retorno = TRUE;
     int i;
     for( i=0 ; cadena[i] != '\0'  ; i++)
     {
         if((cadena[i] > 'Z' || cadena[i] < 'A') && (cadena[i] > 'z' || cadena[i] < 'a')  )
         {
-            retorno = 0;
+            retorno = FALSE;
             break;
         }
     }
