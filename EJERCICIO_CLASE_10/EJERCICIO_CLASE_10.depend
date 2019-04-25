@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1556235559 source:/home/alumno/Documentos/leonvila/Ejercicios_lab_y_prog_1/EJERCICIO_CLASE_10/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"pantalla.h"
+	"utn.h"
+
+1556228344 source:/home/alumno/Documentos/leonvila/Ejercicios_lab_y_prog_1/EJERCICIO_CLASE_10/utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1556235479 source:/home/alumno/Documentos/leonvila/Ejercicios_lab_y_prog_1/EJERCICIO_CLASE_10/pantalla.c
+	"utn.h"
+	"pantalla.h"
+	<stdio.h>
+	<ctype.h>
+	<stdlib.h>
+	<string.h>
+
+1556228344 /home/alumno/Documentos/leonvila/Ejercicios_lab_y_prog_1/EJERCICIO_CLASE_10/utn.h
+
+1556234247 /home/alumno/Documentos/leonvila/Ejercicios_lab_y_prog_1/EJERCICIO_CLASE_10/pantalla.h
+
