@@ -19,9 +19,12 @@ int pan_mostrarArrayPantalla(Pantalla arrayPantalla[],int limite)
     int i;
     for(i=0;i<limite;i++)
     {
-        printf("\ID:%s Empty:%d Nombre:%s Dir:%s Precio:%f Tipo:%s",arrayPantalla[i].nombre,
+        printf("ID:%s Empty:%d Nombre:%s Dir:%s Precio:%.2f Tipo:%s",arrayPantalla[i].nombre,
                                                                     arrayPantalla[i].idPantalla,
-                                                                    arrayPantalla[i].nombre,);
+                                                                    arrayPantalla[i].nombre,
+                                                                    arrayPantalla[i].direccion,
+                                                                    arrayPantalla[i].precio,
+                                                                    arrayPantalla[i].tipo);
 
     }
     return 0;
@@ -56,19 +59,24 @@ int pan_buscarPorId(Pantalla arrayPantalla[],int limite,int id,int *indice)
     return retorno;
 }
 
-int pan_AltaPantalla(Pantalla arrayPantalla[], int limite, int posLibre)
+int pan_AltaPantalla(Pantalla arrayPantalla[], int limite, int *indice)
 {
-    char bufferNombre;
-    char bufferDireccion;
-    char bufferTipo;
-    int indice;
+    char bufferNombre[50];
+    char bufferDireccion[256];
+    char bufferTipo[50];
+    int i;
     int retorno=-1;
-    if(pan_lugarLibre(arrayPantalla, 100, &indice))
+
+    if(pan_lugarLibre(arrayPantalla,limite,&i))
     {
-    getString("Ingrese el nombre: ", "Error", 1, 50, 2, &bufferNombre);
-    getString("Ingrese la direccion: ", "Error", 1, 50, 2, &bufferDireccion);
-    getString("Ingrese el tipo: ", "Error", 1, 50, 2, &bufferTipo);
-    retorno=0;
+        getString("Ingrese el nombre: ","Error",1,50,2,bufferNombre);
+        getString("Ingrese la direccion: ","Error",1,256,2,bufferDireccion);
+        getString("Ingrese el tipo: ","Error",1,50,2,bufferTipo);
+        strncpy(arrayPantalla[i].nombre,bufferNombre,50);
+        strncpy(arrayPantalla[i].direccion,bufferDireccion,256);
+        strncpy(arrayPantalla[i].tipo,bufferTipo,50);
     }
+
+    retorno=0;
     return retorno;
 }
