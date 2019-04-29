@@ -7,11 +7,19 @@
 #define CANTIDAD_PANTALLAS 3
 int main()
 {
+
     Pantalla auxPantalla[CANTIDAD_PANTALLAS];
     int indicePantalla;
+    int opcion=1;
 
-    pan_AltaPantalla(auxPantalla,CANTIDAD_PANTALLAS,&indicePantalla);
-    pan_mostrarArrayPantalla(auxPantalla,CANTIDAD_PANTALLAS);
+    switch(opcion)
+    {
+        case 1:
+
+            break;
+
+    }
+
 
     return 0;
 }

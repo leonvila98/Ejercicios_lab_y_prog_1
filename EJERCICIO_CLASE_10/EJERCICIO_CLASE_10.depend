@@ -23,3 +23,27 @@
 
 1556239097 /home/alumno/Documentos/leonvila/Ejercicios_lab_y_prog_1/EJERCICIO_CLASE_10/pantalla.h
 
+1556562119 source:/home/leon/Documentos/Ejercicios_lab_y_prog_1/EJERCICIO_CLASE_10/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"pantalla.h"
+	"utn.h"
+
+1556561230 /home/leon/Documentos/Ejercicios_lab_y_prog_1/EJERCICIO_CLASE_10/pantalla.h
+
+1556559795 /home/leon/Documentos/Ejercicios_lab_y_prog_1/EJERCICIO_CLASE_10/utn.h
+
+1556561889 source:/home/leon/Documentos/Ejercicios_lab_y_prog_1/EJERCICIO_CLASE_10/pantalla.c
+	"utn.h"
+	"pantalla.h"
+	<stdio.h>
+	<ctype.h>
+	<stdlib.h>
+	<string.h>
+
+1556559795 source:/home/leon/Documentos/Ejercicios_lab_y_prog_1/EJERCICIO_CLASE_10/utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

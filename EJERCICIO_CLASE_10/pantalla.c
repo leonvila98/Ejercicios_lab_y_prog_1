@@ -19,13 +19,13 @@ int pan_mostrarArrayPantalla(Pantalla arrayPantalla[],int limite)
     int i;
     for(i=0;i<limite;i++)
     {
-        printf("ID:%s Empty:%d Nombre:%s Dir:%s Precio:%.2f Tipo:%s",arrayPantalla[i].nombre,
-                                                                    arrayPantalla[i].idPantalla,
-                                                                    arrayPantalla[i].nombre,
-                                                                    arrayPantalla[i].direccion,
-                                                                    arrayPantalla[i].precio,
-                                                                    arrayPantalla[i].tipo);
-
+        if(arrayPantalla[i].isEmpty==0)
+        {
+            printf("ID:%d NOMBRE:%s DIR:%s TIPO:%s\n",  arrayPantalla[i].idPantalla,
+                                                        arrayPantalla[i].nombre,
+                                                        arrayPantalla[i].direccion,
+                                                        arrayPantalla[i].tipo);
+        }
     }
     return 0;
 }
@@ -58,16 +58,14 @@ int pan_buscarPorId(Pantalla arrayPantalla[],int limite,int id,int *indice)
     }
     return retorno;
 }
-
-int pan_AltaPantalla(Pantalla arrayPantalla[], int limite, int *indice)
+int pan_altaPantalla(Pantalla arrayPantalla[], int limite, int *indice)
 {
     char bufferNombre[50];
     char bufferDireccion[256];
     char bufferTipo[50];
     int i;
     int retorno=-1;
-
-    if(pan_lugarLibre(arrayPantalla,limite,&i))
+    if(pan_lugarLibre(arrayPantalla,limite,&i)==0)
     {
         getString("Ingrese el nombre: ","Error",1,50,2,bufferNombre);
         getString("Ingrese la direccion: ","Error",1,256,2,bufferDireccion);
@@ -75,8 +73,19 @@ int pan_AltaPantalla(Pantalla arrayPantalla[], int limite, int *indice)
         strncpy(arrayPantalla[i].nombre,bufferNombre,50);
         strncpy(arrayPantalla[i].direccion,bufferDireccion,256);
         strncpy(arrayPantalla[i].tipo,bufferTipo,50);
+        arrayPantalla[i].isEmpty=0;
+        retorno=0;
     }
-
-    retorno=0;
     return retorno;
+}
+int pan_bajaPantalla(Pantalla arrayPantalla[], int id, int limite)
+{
+    int indicePantalla;
+    if(pan_buscarPorId(arrayPantalla,limite,id,&indicePantalla)==0)
+    {
+        strncpy(arrayPantalla[indicePantalla].direccion,"\0",256);
+        strncpy(arrayPantalla[indicePantalla].nombre,"\0",50);
+        strncpy(arrayPantalla[indicePantalla].tipo,"\0",50);
+        arrayPantalla[indicePantalla].isEmpty==1;
+    }
 }
