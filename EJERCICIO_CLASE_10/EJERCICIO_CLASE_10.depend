@@ -23,18 +23,18 @@
 
 1556239097 /home/alumno/Documentos/leonvila/Ejercicios_lab_y_prog_1/EJERCICIO_CLASE_10/pantalla.h
 
-1556562119 source:/home/leon/Documentos/Ejercicios_lab_y_prog_1/EJERCICIO_CLASE_10/main.c
+1556738838 source:/home/leon/Documentos/Ejercicios_lab_y_prog_1/EJERCICIO_CLASE_10/main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"pantalla.h"
 	"utn.h"
 
-1556561230 /home/leon/Documentos/Ejercicios_lab_y_prog_1/EJERCICIO_CLASE_10/pantalla.h
+1556736780 /home/leon/Documentos/Ejercicios_lab_y_prog_1/EJERCICIO_CLASE_10/pantalla.h
 
 1556559795 /home/leon/Documentos/Ejercicios_lab_y_prog_1/EJERCICIO_CLASE_10/utn.h
 
-1556561889 source:/home/leon/Documentos/Ejercicios_lab_y_prog_1/EJERCICIO_CLASE_10/pantalla.c
+1556738870 source:/home/leon/Documentos/Ejercicios_lab_y_prog_1/EJERCICIO_CLASE_10/pantalla.c
 	"utn.h"
 	"pantalla.h"
 	<stdio.h>
@@ -46,4 +46,15 @@
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
+
+1556738440 source:/home/leon/Documentos/Ejercicios_lab_y_prog_1/EJERCICIO_CLASE_10/publicidad.c
+	"utn.h"
+	"pantalla.h"
+	"publicidad.h"
+	<stdio.h>
+	<ctype.h>
+	<stdlib.h>
+	<string.h>
+
+1556738608 /home/leon/Documentos/Ejercicios_lab_y_prog_1/EJERCICIO_CLASE_10/publicidad.h
 

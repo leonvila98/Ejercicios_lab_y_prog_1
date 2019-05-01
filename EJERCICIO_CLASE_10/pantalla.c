@@ -26,6 +26,10 @@ int pan_mostrarArrayPantalla(Pantalla arrayPantalla[],int limite)
                                                         arrayPantalla[i].direccion,
                                                         arrayPantalla[i].tipo);
         }
+        else
+        {
+            return -1;
+        }
     }
     return 0;
 }
@@ -87,5 +91,46 @@ int pan_bajaPantalla(Pantalla arrayPantalla[], int id, int limite)
         strncpy(arrayPantalla[indicePantalla].nombre,"\0",50);
         strncpy(arrayPantalla[indicePantalla].tipo,"\0",50);
         arrayPantalla[indicePantalla].isEmpty==1;
+        return 0;
+    }
+    else
+    {
+        return -1;
+    }
+}
+int pan_modificarPantalla(Pantalla arrayPantalla[],int id,int limite)
+{
+    int opcion;
+    int indicePantalla;
+    char bufferNombre[50];
+    char bufferDireccion[256];
+    char bufferTipo[50];
+    if(pan_buscarPorId(arrayPantalla,limite,id,&indicePantalla)==0)
+    {
+        printf("\n1.Nombre");
+        printf("\n2.Direccion");
+        printf("\n3.Tipo");
+        printf("\nIngrese opcion que quiera modificar:");
+        scanf("%d",&opcion);
+        switch(opcion)
+        {
+            case 1:
+                getString("\nIngrese el nombre: ","Error",1,50,2,bufferNombre);
+                strncpy(arrayPantalla[indicePantalla].nombre,bufferNombre,50);
+                break;
+            case 2:
+                getString("\nIngrese la direccion: ","Error",1,256,2,bufferDireccion);
+                strncpy(arrayPantalla[indicePantalla].direccion,bufferDireccion,256);
+                break;
+            case 3:
+                getString("\nIngrese el tipo: ","Error",1,50,2,bufferTipo);
+                strncpy(arrayPantalla[indicePantalla].tipo,bufferTipo,50);
+                break;
+        }
+        return 0;
+    }
+    else
+    {
+        return -1;
     }
 }
