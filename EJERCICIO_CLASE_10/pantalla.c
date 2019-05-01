@@ -90,7 +90,7 @@ int pan_bajaPantalla(Pantalla arrayPantalla[], int id, int limite)
         strncpy(arrayPantalla[indicePantalla].direccion,"\0",256);
         strncpy(arrayPantalla[indicePantalla].nombre,"\0",50);
         strncpy(arrayPantalla[indicePantalla].tipo,"\0",50);
-        arrayPantalla[indicePantalla].isEmpty==1;
+        arrayPantalla[indicePantalla].isEmpty=1;
         return 0;
     }
     else
