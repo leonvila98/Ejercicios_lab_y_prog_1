@@ -96,6 +96,7 @@ int lla_asoMasLlamados(Llamadas *auxLlamada,Asociado *auxAsociado,int limite,int
 {
     int i;
     int j=0;
+    int flag=0;
     int retorno=-1;
     int contador=0;
     int maximo;
@@ -103,22 +104,40 @@ int lla_asoMasLlamados(Llamadas *auxLlamada,Asociado *auxAsociado,int limite,int
     {
         for(i=0;i<limite;i++)
         {
-            if(auxLlamada[i].estado!=2)
-            {
-                if(auxLlamada[i].idAsociado==auxAsociado[j].idAsociado)
-                {
-                    contador++;
-                    maximo=contador;
-                }
-            }
-            if(contador>=maximo)
+            if(flag==0)
             {
                 maximo=contador;
-                retorno=auxLlamada[i].idAsociado;
+                retorno=auxAsociado[j].idAsociado;
+                flag=1;
+            }
+            if(auxLlamada[i].idAsociado==auxAsociado[j].idAsociado)
+            {
+                contador++;
+                if(contador>maximo)
+                {
+                    maximo=contador;
+                    retorno=auxAsociado[j].idAsociado;
+                }
             }
         }
         j++;
         contador=0;
     }while(j<limiteAso);
+    return retorno;
+}
+int lla_maxMotivos(Llamadas *auxLlamada,int limite)
+{
+    int i;
+    int flag=0;
+    int retorno=-1;
+    int contadorUno=0;
+    int contadorDos=0;
+    int contadorTres=0;
+    int maximo;
+
+    for(i=0;i<limite;i++)
+
+
+
     return retorno;
 }

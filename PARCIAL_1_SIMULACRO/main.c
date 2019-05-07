@@ -4,8 +4,8 @@
 #include "utn.h"
 #include "Asociados.h"
 #include "Llamadas.h"
-#define QTY_ASOCIADOS 4
-#define QTY_LLAMADAS 4
+#define QTY_ASOCIADOS 3
+#define QTY_LLAMADAS 3
 
 int main()
 {
@@ -51,7 +51,7 @@ int main()
     auxLlamada[0].estado=1;
     auxLlamada[0].tiempo=23;
     auxLlamada[0].idAsociado=0;
-    auxLlamada[0].motivo=2;
+    auxLlamada[0].motivo=1;
     auxLlamada[1].estado=1;
     auxLlamada[1].tiempo=44;
     auxLlamada[1].idAsociado=5;
@@ -102,7 +102,6 @@ int main()
                 if(opcionInfo==1)
                 {
                     auxId=lla_asoMasLlamados(auxLlamada,auxAsociado,QTY_LLAMADAS,QTY_ASOCIADOS);
-                    printf("%d",auxId);
                     aso_printUnAsociado(auxAsociado,QTY_ASOCIADOS,auxId);
                     break;
                 }

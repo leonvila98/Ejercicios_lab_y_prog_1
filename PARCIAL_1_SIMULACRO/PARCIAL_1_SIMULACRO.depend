@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1557256287 source:/home/leon/Documentos/PARCIAL_1_SIMULACRO/Llamadas.c
+1557270957 source:/home/leon/Documentos/PARCIAL_1_SIMULACRO/Llamadas.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -21,7 +21,7 @@
 	<stdlib.h>
 	<string.h>
 
-1557256287 source:/home/leon/Documentos/PARCIAL_1_SIMULACRO/main.c
+1557270853 source:/home/leon/Documentos/PARCIAL_1_SIMULACRO/main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
