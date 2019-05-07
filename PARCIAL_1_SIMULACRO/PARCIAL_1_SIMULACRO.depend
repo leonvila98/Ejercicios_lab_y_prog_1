@@ -1,0 +1,35 @@
+# depslib dependency file v1.0
+1557256287 source:/home/leon/Documentos/PARCIAL_1_SIMULACRO/Llamadas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"Asociados.h"
+	"Llamadas.h"
+
+1557252776 source:/home/leon/Documentos/PARCIAL_1_SIMULACRO/Asociados.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"Asociados.h"
+
+1557253801 /home/leon/Documentos/PARCIAL_1_SIMULACRO/Asociados.h
+
+1557097082 source:/home/leon/Documentos/PARCIAL_1_SIMULACRO/utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1557256287 source:/home/leon/Documentos/PARCIAL_1_SIMULACRO/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"Asociados.h"
+	"Llamadas.h"
+
+1557079063 /home/leon/Documentos/PARCIAL_1_SIMULACRO/utn.h
+
+1557256287 /home/leon/Documentos/PARCIAL_1_SIMULACRO/Llamadas.h
+
