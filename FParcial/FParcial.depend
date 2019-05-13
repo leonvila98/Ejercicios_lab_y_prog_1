@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1557778842 source:/home/leon/Documentos/FantasmaParaParcial/FParcial/fantasma.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"fantasma.h"
+
+1557778815 /home/leon/Documentos/FantasmaParaParcial/FParcial/utn.h
+
+1557515031 /home/leon/Documentos/FantasmaParaParcial/FParcial/fantasma.h
+
+1557777171 source:/home/leon/Documentos/FantasmaParaParcial/FParcial/main.c
+	<stdio.h>
+	<stdlib.h>
+
+1557778941 source:/home/leon/Documentos/FantasmaParaParcial/FParcial/utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+
