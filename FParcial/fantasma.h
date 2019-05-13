@@ -5,6 +5,13 @@
 
 typedef struct
 {
+    int d;
+    int m;
+    int a;
+}Fecha;
+
+typedef struct
+{
     int idUnico;
     int isEmpty;
     //-----------------
@@ -13,6 +20,7 @@ typedef struct
     float varFloat;
     char varChar;
     char varLongString[TEXT_SIZE];
+    Fecha date;
 
 }Fantasma;
 
