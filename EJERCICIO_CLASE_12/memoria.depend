@@ -1,0 +1,35 @@
+# depslib dependency file v1.0
+1557879465 source:/home/profesor/Descargas/memoria/main.c
+	<stdio.h>
+	<stdlib.h>
+	"empleado.h"
+
+1557879424 /home/profesor/Descargas/memoria/empleado.h
+
+1557879492 source:/home/profesor/Descargas/memoria/empleado.c
+	<stdio.h>
+	<stdlib.h>
+	"empleado.h"
+
+1557882248 source:/home/alumno/Documentos/leonvila/Ejercicios_lab_y_prog_1/EJERCICIO_CLASE_12/main.c
+	<stdio.h>
+	<stdlib.h>
+	"empleado.h"
+
+1557879424 /home/alumno/Documentos/leonvila/Ejercicios_lab_y_prog_1/EJERCICIO_CLASE_12/empleado.h
+
+1557881489 source:/home/alumno/Documentos/leonvila/Ejercicios_lab_y_prog_1/EJERCICIO_CLASE_12/utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+
+1557869369 /home/alumno/Documentos/leonvila/Ejercicios_lab_y_prog_1/EJERCICIO_CLASE_12/utn.h
+
+1557882415 source:/home/alumno/Documentos/leonvila/Ejercicios_lab_y_prog_1/EJERCICIO_CLASE_12/empleado.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"empleado.h"
+	"utn.h"
+

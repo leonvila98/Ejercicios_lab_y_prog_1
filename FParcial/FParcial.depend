@@ -20,3 +20,24 @@
 	<string.h>
 	"utn.h"
 
+1557869369 source:/home/alumno/Documentos/leonvila/Ejercicios_lab_y_prog_1/FParcial/fantasma.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"fantasma.h"
+
+1557869369 /home/alumno/Documentos/leonvila/Ejercicios_lab_y_prog_1/FParcial/utn.h
+
+1557869369 /home/alumno/Documentos/leonvila/Ejercicios_lab_y_prog_1/FParcial/fantasma.h
+
+1557869369 source:/home/alumno/Documentos/leonvila/Ejercicios_lab_y_prog_1/FParcial/main.c
+	<stdio.h>
+	<stdlib.h>
+
+1557869369 source:/home/alumno/Documentos/leonvila/Ejercicios_lab_y_prog_1/FParcial/utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+
