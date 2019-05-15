@@ -150,11 +150,11 @@ int fantasma_buscarString(Fantasma array[], int size, char* valorBuscado, int* i
 * \return int Return (-1) si Error [largo no valido o NULL pointer o no hay posiciones vacias] - (0) si se agrega un nuevo elemento exitosamente
 *
 */
-int fantasma_alta(Fantasma array[], int size, int* contadorID)                          //cambiar fantasma
+int fantasma_alta(Fantasma array[], int size)                          //cambiar fantasma
 {
     int retorno=-1;
     int posicion;
-    if(array!=NULL && size>0 && contadorID!=NULL)
+    if(array!=NULL && size>0)
     {
         if(fantasma_buscarEmpty(array,size,&posicion)==-1)                          //cambiar fantasma
         {
@@ -162,10 +162,8 @@ int fantasma_alta(Fantasma array[], int size, int* contadorID)                  
         }
         else
         {
-            (*contadorID)++;
-            array[posicion].idUnico=*contadorID;                                                       //campo ID
             array[posicion].isEmpty=0;
-            utn_getUnsignedInt("\ngetUnsignedInt: ","\nError",1,sizeof(int),1,10,1,&array[posicion].varInt);           //mensaje + cambiar campo varInt
+            utn_getInt("\ngetUnsignedInt: ","\nError",1,10,1,&array[posicion].varInt);           //mensaje + cambiar campo varInt
             utn_getFloat("\ngetFloat: ","\nError",1,sizeof(float),0,1,1,&array[posicion].varFloat);             //mensaje + cambiar campo varFloat
             utn_getName("\ngetName: ","\nError",1,TEXT_SIZE,1,array[posicion].varString);                      //mensaje + cambiar campo varString
             utn_getTexto("\ngetTexto: ","\nError",1,TEXT_SIZE,1,array[posicion].varLongString);                 //mensaje + cambiar campo varLongString
@@ -185,15 +183,15 @@ int fantasma_alta(Fantasma array[], int size, int* contadorID)                  
 * \return int Return (-1) si Error [largo no valido o NULL pointer o no encuentra elementos con el valor buscado] - (0) si se elimina el elemento exitosamente
 *
 */
-int fantasma_baja(Fantasma array[], int sizeArray)                                      //cambiar fantasma
+int fantasma_baja(Fantasma array[], int size)                                      //cambiar fantasma
 {
     int retorno=-1;
     int posicion;
     int id;
-    if(array!=NULL && sizeArray>0)
+    if(array!=NULL && size>0)
     {
-        utn_getUnsignedInt("\nID a cancelar: ","\nError",1,sizeof(int),1,sizeArray,1,&id);          //cambiar si no se busca por ID
-        if(fantasma_buscarID(array,sizeArray,id,&posicion)==-1)                                   //cambiar si no se busca por ID
+        utn_getInt("\nID a cancelar: ","\nError",1,size,1,&id);          //cambiar si no se busca por ID
+        if(fantasma_buscarID(array,size,id,&posicion)==-1)                                   //cambiar si no se busca por ID
         {
             printf("\nNo existe este ID");                                                          //cambiar si no se busca por ID
         }
@@ -241,9 +239,6 @@ int fantasma_bajaValorRepetidoInt(Fantasma array[], int sizeArray, int valorBusc
     }
     return retorno;
 }
-
-
-
 //*****************************************
 //Modificar
 /** \brief Busca un elemento por ID y modifica sus campos
@@ -260,7 +255,7 @@ int fantasma_modificar(Fantasma array[], int sizeArray)                         
     int opcion;
     if(array!=NULL && sizeArray>0)
     {
-        utn_getUnsignedInt("\nID a modificar: ","\nError",1,sizeof(int),1,sizeArray,1,&id);         //cambiar si no se busca por ID
+        utn_getInt("\nID a modificar: ","\nError",1,sizeArray,1,&id);         //cambiar si no se busca por ID
         if(fantasma_buscarID(array,sizeArray,id,&posicion)==-1)                                   //cambiar si no se busca por ID
         {
             printf("\nNo existe este ID");                                                          //cambiar si no se busca por ID
@@ -268,14 +263,14 @@ int fantasma_modificar(Fantasma array[], int sizeArray)                         
         else
         {
             do
-            {       //copiar printf de alta
+            {
                 printf("\n Posicion: %d\n ID: %d\n varInt: %d\n varFloat: %f\n varString: %s\n varLongString: %s",
                        posicion, array[posicion].idUnico,array[posicion].varInt,array[posicion].varFloat,array[posicion].varString,array[posicion].varLongString);
                 utn_getInt("\nModificar:\n1) \n2) \n3) \n4) \n5) \n6)Salir","\nError",1,6,1,&opcion);
                 switch(opcion)
                 {
                     case 1:
-                        utn_getUnsignedInt("\n: ","\nError",1,sizeof(int),1,1,1,&array[posicion].varInt);           //mensaje + cambiar campo varInt
+                        utn_getInt("\n: ","\nError",1,1,1,&array[posicion].varInt);           //mensaje + cambiar campo varInt
                         break;
                     case 2:
                         utn_getFloat("\n: ","\nError",1,sizeof(float),0,1,1,&array[posicion].varFloat);             //mensaje + cambiar campo varFloat
@@ -381,38 +376,27 @@ int fantasma_listar(Fantasma array[], int size)                      //cambiar f
 }
 
 
-void fantasma_mock(Fantasma arrayFantasma[], int size,int *contadorId)                      //cambiar fantasma
+void fantasma_mock(Fantasma arrayFantasma[], int size)                      //cambiar fantasma
 {
     //*******************************************************************
-    arrayFantasma[0].idUnico=0;
     arrayFantasma[0].isEmpty=0;
     arrayFantasma[0].varInt=0;
     arrayFantasma[0].varFloat=0;
     strcpy(arrayFantasma[0].varLongString,"CCCCC");
     strcpy(arrayFantasma[0].varString,"CCCCC");
-    *contadorId++;
-
-    arrayFantasma[1].idUnico=1;
     arrayFantasma[1].isEmpty=0;
     arrayFantasma[1].varInt=0;
     arrayFantasma[1].varFloat=0;
     strcpy(arrayFantasma[1].varLongString,"AAAAA");
     strcpy(arrayFantasma[1].varString,"AAAAA");
-    *contadorId++;
-
-    arrayFantasma[2].idUnico=2;
     arrayFantasma[2].isEmpty=0;
     arrayFantasma[2].varInt=0;
     arrayFantasma[2].varFloat=20;
     strcpy(arrayFantasma[2].varLongString,"BBBBB");
     strcpy(arrayFantasma[2].varString,"BBBBBB");
-    *contadorId++;
-
-    arrayFantasma[3].idUnico=3;
     arrayFantasma[3].isEmpty=0;
     arrayFantasma[3].varInt=0;
     arrayFantasma[3].varFloat=10;
     strcpy(arrayFantasma[3].varLongString,"BBBBB");
     strcpy(arrayFantasma[3].varString,"BBBBBB");
-    contadorId++;
 }
