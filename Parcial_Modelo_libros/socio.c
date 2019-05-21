@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "utn.h"
-#include "socio.h" //cambiar por nombre entidad
+#include "socio.h"
 
 
 /** \brief  To indicate that all position in the array are empty,
@@ -63,7 +63,7 @@ int socio_buscarEmpty(Socio array[], int size, int* posicion)                   
 * \return int Return (-1) si no encuentra el valor buscado o Error [Invalid length or NULL pointer] - (0) si encuentra el valor buscado
 *
 */
-int socio_buscarID(Socio array[], int size, int valorBuscado, int* posicion)                    //cambiar socio
+int socio_buscarID(Socio array[], int size, int valorBuscado, int* posicion)
 {
     int retorno=-1;
     int i;
@@ -71,9 +71,9 @@ int socio_buscarID(Socio array[], int size, int valorBuscado, int* posicion)    
     {
         for(i=0;i<size;i++)
         {
-            if(array[i].isEmpty==1)
+            if(array[i].isEmpty==0)
             {
-                if(array[i].idUnico==valorBuscado)                                                   //cambiar campo ID
+                if(array[i].idUnico==valorBuscado)
                 {
                     retorno=0;
                     *posicion=i;
@@ -150,24 +150,21 @@ int socio_buscarString(Socio array[], int size, char* valorBuscado, int* indice)
 * \return int Return (-1) si Error [largo no valido o NULL pointer o no hay posiciones vacias] - (0) si se agrega un nuevo elemento exitosamente
 *
 */
-int socio_alta(Socio array[], int size, int* contadorID)                          //cambiar socio
+int socio_alta(Socio array[], int size)
 {
     int retorno=-1;
     int posicion;
-    if(array!=NULL && size>0 && contadorID!=NULL)
+    if(array!=NULL && size>0 )
     {
-        if(socio_buscarEmpty(array,size,&posicion)==-1)                          //cambiar socio
+        if(socio_buscarEmpty(array,size,&posicion)==-1)
         {
             printf("\nNo hay lugares vacios");
         }
         else
         {
-            (*contadorID)++;
-            array[posicion].idUnico=*contadorID;                                                       //campo ID
             array[posicion].isEmpty=0;
-            //utn_getUnsignedInt("\ngetUnsignedInt: ","\nError",1,sizeof(int),1,10,1,&array[posicion].varInt);                    //mensaje + cambiar campo varFloat
-            utn_getName("\ngetName: ","\nError",1,TEXT_SIZE,1,array[posicion].nombre);                      //mensaje + cambiar campo nombre
-            utn_getTexto("\ngetTexto: ","\nError",1,TEXT_SIZE,1,array[posicion].apellido);                 //mensaje + cambiar campo apellido
+            utn_getName("\nNombre: ","\nError",1,TEXT_SIZE,1,array[posicion].nombre);
+            utn_getTexto("\nApellido: ","\nError",1,TEXT_SIZE,1,array[posicion].apellido);
             printf("\n Posicion: %d\n ID: %d\n nombre: %s\n apellido: %s",
                    posicion, array[posicion].idUnico,array[posicion].nombre,array[posicion].apellido);
             retorno=0;
@@ -191,7 +188,7 @@ int socio_baja(Socio array[], int sizeArray)                                    
     int id;
     if(array!=NULL && sizeArray>0)
     {
-        utn_getUnsignedInt("\nID a cancelar: ","\nError",1,sizeof(int),1,sizeArray,1,&id);          //cambiar si no se busca por ID
+        utn_getInt("\nID a cancelar: ","\nError",1,sizeArray+1,1,&id);          //cambiar si no se busca por ID
         if(socio_buscarID(array,sizeArray,id,&posicion)==-1)                                   //cambiar si no se busca por ID
         {
             printf("\nNo existe este ID");                                                          //cambiar si no se busca por ID
@@ -252,10 +249,11 @@ int socio_modificar(Socio array[], int sizeArray)                               
     int retorno=-1;
     int posicion;
     int id;                                                                                         //cambiar si no se busca por ID
-    char opcion;
+    int opcion;
+    int opcionSexo;
     if(array!=NULL && sizeArray>0)
     {
-        utn_getUnsignedInt("\nID a modificar: ","\nError",1,sizeof(int),1,sizeArray,1,&id);         //cambiar si no se busca por ID
+        utn_getInt("\nID a modificar: ","\nError",1,sizeArray+1,1,&id);         //cambiar si no se busca por ID
         if(socio_buscarID(array,sizeArray,id,&posicion)==-1)                                   //cambiar si no se busca por ID
         {
             printf("\nNo existe este ID");                                                          //cambiar si no se busca por ID
@@ -266,7 +264,7 @@ int socio_modificar(Socio array[], int sizeArray)                               
             {
                 printf("\n Posicion: %d\n ID: %d\n nombre: %s\n apellido: %s",
 						posicion, array[posicion].idUnico,array[posicion].nombre,array[posicion].apellido);
-                utn_getUnsignedInt("\nModificar:\n1-Nombre\n2-Apellido\n3-Sexo\n4-Telefono\n5-Email","\nError",);
+                utn_getInt("\nModificar:\n1-Nombre\n2-Apellido\n3-Sexo\n4-Telefono\n5-Email","\nError",1,6,2,&opcion);
                 switch(opcion)
                 {
                     case 1:
@@ -281,7 +279,7 @@ int socio_modificar(Socio array[], int sizeArray)                               
 					break;
                     case 3:
                     {
-						utn_getChar("\nNuevo sexo F o M:","Error",)
+						utn_getInt("\nNuevo sexo: \n1-Femenino\n2-Masculino","Error",1,2,2,&opcionSexo);
                     }
 					break;
                     case 4:
@@ -369,40 +367,55 @@ int socio_listar(Socio array[], int size)                      //cambiar socio
             if(array[i].isEmpty==1)
                 continue;
             else
-                printf("\n Posicion: %d\n ID: %d\n nombre: %s\n apellido: %s",
+                printf("\n Posicion: %d\n ID: %d\n nombre: %s\n apellido: %s\n",
                    i, array[i].idUnico,array[i].nombre,array[i].apellido);
         }
         retorno=0;
     }
     return retorno;
 }
+int socio_printPorId(Socio array[], int size, int id)
+{
+    int retorno=-1;
+    int i;
+    if(array!= NULL && size>=0)
+    {
+        for(i=0;i<size;i++)
+        {
+            if(array[i].isEmpty==0)
+            {
+                if(array[i].idUnico==id)
+                {
+                    retorno=0;
+                    printf("\n Posicion: %d\n ID: %d\n nombre: %s\n apellido: %s\n",
+                    i, array[i].idUnico,array[i].nombre,array[i].apellido);
+                    break;
+                }
+            }
+        }
+    }
+    return retorno;
+}
 
 
-void socio_mock(Socio arraySocio[], int size,int *contadorId)                      //cambiar socio
+void socio_mock(Socio arraySocio[], int size)                      //cambiar socio
 {
     //*******************************************************************
     arraySocio[0].idUnico=0;
     arraySocio[0].isEmpty=0;
-    strcpy(arraySocio[0].apellido,"CCCCC");
-    strcpy(arraySocio[0].nombre,"CCCCC");
-    *contadorId++;
-
+    strcpy(arraySocio[0].apellido,"Armani");
+    strcpy(arraySocio[0].nombre,"Giorgio");
     arraySocio[1].idUnico=1;
     arraySocio[1].isEmpty=0;
-    strcpy(arraySocio[1].apellido,"AAAAA");
-    strcpy(arraySocio[1].nombre,"AAAAA");
-    *contadorId++;
-
+    strcpy(arraySocio[1].apellido,"Vila");
+    strcpy(arraySocio[1].nombre,"Leon");
     arraySocio[2].idUnico=2;
     arraySocio[2].isEmpty=0;
-    strcpy(arraySocio[2].apellido,"BBBBB");
-    strcpy(arraySocio[2].nombre,"BBBBBB");
-    *contadorId++;
-
+    strcpy(arraySocio[2].apellido,"Suarez");
+    strcpy(arraySocio[2].nombre,"Matias");
     arraySocio[3].idUnico=3;
     arraySocio[3].isEmpty=0;
-    strcpy(arraySocio[3].apellido,"BBBBB");
-    strcpy(arraySocio[3].nombre,"BBBBBB");
-    contadorId++;
+    strcpy(arraySocio[3].apellido,"Ponzio");
+    strcpy(arraySocio[3].nombre,"Leo");
 }
 

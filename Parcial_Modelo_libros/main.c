@@ -18,89 +18,87 @@
 
 int main()
 {
-    int opcion;
-    int contadorIdfantasma=0;                   //cambiar
+    int i;
+    int opcion=1;
 
-    Fantasma arrayFantasma[QTY_ARRAY_TIPO];                   //cambiar
-    fantasma_Inicializar(arrayFantasma,QTY_ARRAY_TIPO);                   //cambiar
-    fantasma_mock(arrayFantasma, QTY_ARRAY_TIPO, &contadorIdfantasma) ;                     //cambiar fantasma
+    Autor arrayAutor[QTY_ARRAY_AUTOR];
+    autor_Inicializar(arrayAutor,QTY_ARRAY_AUTOR);
+    Libro arrayLibro[QTY_ARRAY_LIBRO];
+    libro_Inicializar(arrayLibro,QTY_ARRAY_LIBRO);
+    Socio arraySocio[QTY_ARRAY_SOCIO];
+    socio_Inicializar(arraySocio,QTY_ARRAY_SOCIO);
+    Prestamo arrayPrestamo[QTY_ARRAY_PRESTAMO];
+    prestamo_Inicializar(arrayPrestamo,QTY_ARRAY_PRESTAMO);
 
-    int contadorIdAutor=0;
-    Autor arrayAutor[QTY_ARRAY_AUTOR];                   //cambiar
-    autor_Inicializar(arrayAutor,QTY_ARRAY_AUTOR);                   //cambiar
-    autor_mock(arrayAutor, QTY_ARRAY_AUTOR, &contadorIdAutor) ;                     //cambiar fantasma
+    autor_mock(arrayAutor, QTY_ARRAY_AUTOR) ;
+    libro_mock(arrayLibro, QTY_ARRAY_LIBRO) ;
+    socio_mock(arraySocio, QTY_ARRAY_SOCIO) ;
+    prestamo_mock(arrayPrestamo, QTY_ARRAY_PRESTAMO) ;
 
-    int contadorIdLibro=0;
-    Libro arrayLibro[QTY_ARRAY_LIBRO];                   //cambiar
-    libro_Inicializar(arrayLibro,QTY_ARRAY_LIBRO);                   //cambiar
-    libro_mock(arrayLibro, QTY_ARRAY_LIBRO, &contadorIdLibro) ;
-
-    int contadorIdSocio=0;
-    Socio arraySocio[QTY_ARRAY_SOCIO];                   //cambiar
-    socio_Inicializar(arraySocio,QTY_ARRAY_SOCIO);                   //cambiar
-    socio_mock(arraySocio, QTY_ARRAY_SOCIO, &contadorIdSocio) ;
-
-    int contadorIdPrestamo=0;
-    Prestamo arrayPrestamo[QTY_ARRAY_PRESTAMO];                   //cambiar
-    prestamo_Inicializar(arrayPrestamo,QTY_ARRAY_PRESTAMO);                   //cambiar
-    prestamo_mock(arrayPrestamo, QTY_ARRAY_PRESTAMO, &contadorIdPrestamo) ;
+    for(i=0;i<QTY_ARRAY_AUTOR;i++)
+    {
+        arrayAutor[i].idUnico=i*2;
+    }
+    for(i=0;i<QTY_ARRAY_LIBRO;i++)
+    {
+        arrayLibro[i].idUnico=i*3;
+    }
+    for(i=0;i<QTY_ARRAY_SOCIO;i++)
+    {
+        arraySocio[i].idUnico=i*5;
+    }
+    for(i=0;i<QTY_ARRAY_PRESTAMO;i++)
+    {
+        arrayPrestamo[i].idUnico=i*10;
+    }
 
     do
     {
-        utn_getUnsignedInt("\n\n1) Alta socio \n2) Modificar socio \n3) Baja \n4) Listar \n5) Ordenar \n\n 6) Alta autor \n7) Modificar autor \n8) Baja autor \n9) Listar autor \n10) Ordenar autor \n11) Salir\n",                   //cambiar
-                      "\nError",1,sizeof(int),1,11,1,&opcion);
+        utn_getInt("\n\n1) Alta socio \n2) Modificar socio \n3) Baja socio \n4) Listar socios \n5) Listar libros"
+                    "\n6) Listar autores\n7) Alta prestamo \n8) Salir\n","\nError",1,8,1,&opcion);
         switch(opcion)
         {
-            case 1: //Alta
+            case 1:
 			{
-				socio_alta(arraySocio,QTY_ARRAY_SOCIO,&contadorIdSocio);
+				//socio_alta(arraySocio,QTY_ARRAY_SOCIO);
+				Informes_listarSociosPorLibro(arraySocio,arrayLibro,arrayPrestamo,QTY_ARRAY_SOCIO,QTY_ARRAY_LIBRO,QTY_ARRAY_PRESTAMO);
+				break;
 			}
-			break;
             case 2:
             {
-
+                socio_modificar(arraySocio,QTY_ARRAY_SOCIO);
+                break;
             }
-                                  //cambiar
+            case 3:
+            {
+                socio_baja(arraySocio,QTY_ARRAY_SOCIO);
                 break;
-
-            case 3: //Baja
-                fantasma_baja(arrayFantasma,QTY_ARRAY_TIPO);                   //cambiar
+            }
+            case 4:
+            {
+                socio_listar(arraySocio,QTY_ARRAY_SOCIO);
                 break;
-
-            case 4://Listar
-                fantasma_listar(arrayFantasma,QTY_ARRAY_TIPO);                   //cambiar
+            }
+            case 5:
+            {
+                libro_listar(arrayLibro,QTY_ARRAY_LIBRO);
                 break;
-
-            case 5://Ordenar
-                fantasma_ordenarPorDobleCriterio(arrayFantasma,QTY_ARRAY_TIPO,SORT_UP,SORT_DOWN);                   //cambiar
+            }
+            case 6:
+            {
+                autor_listar(arrayAutor,QTY_ARRAY_AUTOR);
                 break;
-            case 6: //Alta
-                autor_alta(arrayAutor,QTY_ARRAY_TIPO,&contadorIdAutor);                   //cambiar
+            }
+            case 7:
+            {
+                prestamo_alta(arrayPrestamo,arraySocio,arrayLibro,QTY_ARRAY_PRESTAMO,QTY_ARRAY_SOCIO,QTY_ARRAY_LIBRO);
+                prestamo_listar(arrayPrestamo,QTY_ARRAY_PRESTAMO);
                 break;
-
-            case 7: //Modificar
-                autor_modificar(arrayAutor,QTY_ARRAY_TIPO);                   //cambiar
-                break;
-
-            case 8: //Baja
-                autor_baja(arrayAutor,QTY_ARRAY_TIPO);                   //cambiar
-                break;
-
-            case 9://Listar
-                autor_listar(arrayAutor,QTY_ARRAY_TIPO);                   //cambiar
-                break;
-
-            case 10://Ordenar
-                autor_ordenarPorDobleCriterio(arrayAutor,QTY_ARRAY_TIPO,SORT_UP,SORT_DOWN);                   //cambiar
-                break;
-
-            case 11://Salir
-                break;
-
+            }
             default:
                 printf("\nOpcion no valida");
         }
     }
-    while(opcion!=6);
+    while(opcion!=8);
     return 0;
 }

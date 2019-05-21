@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "utn.h"
-#include "libro.h" //cambiar por nombre entidad
+#include "libro.h"
 
 
 /** \brief  To indicate that all position in the array are empty,
@@ -71,7 +71,7 @@ int libro_buscarID(Libro array[], int size, int valorBuscado, int* posicion)    
     {
         for(i=0;i<size;i++)
         {
-            if(array[i].isEmpty==1)
+            if(array[i].isEmpty==0)
             {
                 if(array[i].idUnico==valorBuscado)                                                   //cambiar campo ID
                 {
@@ -166,7 +166,7 @@ int libro_alta(Libro array[], int size, int* contadorID)                        
             array[posicion].idUnico=*contadorID;                                                       //campo ID
             array[posicion].isEmpty=0;
             utn_getUnsignedInt("\ngetUnsignedInt: ","\nError",1,sizeof(int),1,10,1,&array[posicion].idAutor);           //mensaje + cambiar campo idAutor            //mensaje + cambiar campo varFloat
-            utn_getName("\ngetName: ","\nError",1,TEXT_SIZE,1,array[posicion].nombreLibro);                      //mensaje + cambiar campo nombreLibro                //mensaje + cambiar campo varLongString
+            utn_getName("\ngetName: ","\nError",1,50,1,array[posicion].nombreLibro);                      //mensaje + cambiar campo nombreLibro                //mensaje + cambiar campo varLongString
             printf("\n Posicion: %d\n ID: %d\n idAutor: %d\n nombreLibro: %s",
                    posicion, array[posicion].idUnico,array[posicion].idAutor,array[posicion].nombreLibro);
             retorno=0;
@@ -274,7 +274,7 @@ int libro_modificar(Libro array[], int sizeArray)                               
                     case 'B':
                         break;
                     case 'C':
-                        utn_getName("\n: ","\nError",1,TEXT_SIZE,1,array[posicion].nombreLibro);                      //mensaje + cambiar campo nombreLibro
+                        utn_getName("\n: ","\nError",1,50,1,array[posicion].nombreLibro);                      //mensaje + cambiar campo nombreLibro
                         break;
                     case 'D':
                         break;
@@ -373,31 +373,24 @@ int libro_listar(Libro array[], int size)                      //cambiar libro
 }
 
 
-void libro_mock(Libro arrayLibro[], int size,int *contadorId)                      //cambiar libro
+void libro_mock(Libro arrayLibro[], int size)                      //cambiar libro
 {
     //*******************************************************************
     arrayLibro[0].idUnico=0;
     arrayLibro[0].isEmpty=0;
     arrayLibro[0].idAutor=0;
-    strcpy(arrayLibro[0].nombreLibro,"CCCCC");
-    *contadorId++;
-
+    strcpy(arrayLibro[0].nombreLibro,"Libro Uno");
     arrayLibro[1].idUnico=1;
     arrayLibro[1].isEmpty=0;
     arrayLibro[1].idAutor=0;
-    strcpy(arrayLibro[1].nombreLibro,"AAAAA");
-    *contadorId++;
-
+    strcpy(arrayLibro[1].nombreLibro,"Libro Dos");
     arrayLibro[2].idUnico=2;
     arrayLibro[2].isEmpty=0;
     arrayLibro[2].idAutor=0;
-    strcpy(arrayLibro[2].nombreLibro,"BBBBBB");
-    *contadorId++;
-
+    strcpy(arrayLibro[2].nombreLibro,"Libro Tres");
     arrayLibro[3].idUnico=3;
     arrayLibro[3].isEmpty=0;
     arrayLibro[3].idAutor=0;
-    strcpy(arrayLibro[3].nombreLibro,"BBBBBB");
-    contadorId++;
+    strcpy(arrayLibro[3].nombreLibro,"Libro Cuatro");
 }
 

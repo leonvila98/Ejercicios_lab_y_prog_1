@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "utn.h"
-#include "autor.h" //cambiar por nombre entidad
+#include "autor.h"
 
 
 /** \brief  To indicate that all position in the array are empty,
@@ -71,7 +71,7 @@ int autor_buscarID(Autor array[], int size, int valorBuscado, int* posicion)    
     {
         for(i=0;i<size;i++)
         {
-            if(array[i].isEmpty==1)
+            if(array[i].isEmpty==0)
                 continue;
             else if(array[i].idUnico==valorBuscado)                                                   //cambiar campo ID
             {
@@ -165,7 +165,7 @@ int autor_baja(Autor array[], int sizeArray)                                    
     int id;
     if(array!=NULL && sizeArray>0)
     {
-        utn_getUnsignedInt("\nID a cancelar: ","\nError",1,sizeof(int),1,sizeArray,1,&id);          //cambiar si no se busca por ID
+        utn_getInt("\nID a cancelar: ","\nError",1,sizeArray+1,1,&id);          //cambiar si no se busca por ID
         if(autor_buscarID(array,sizeArray,id,&posicion)==-1)                                   //cambiar si no se busca por ID
         {
             printf("\nNo existe este ID");                                                          //cambiar si no se busca por ID
@@ -230,7 +230,7 @@ int autor_modificar(Autor array[], int sizeArray)                               
     char opcion;
     if(array!=NULL && sizeArray>0)
     {
-        utn_getUnsignedInt("\nID a modificar: ","\nError",1,sizeof(int),1,sizeArray,1,&id);         //cambiar si no se busca por ID
+        utn_getInt("\nID a modificar: ","\nError",1,sizeArray+1,1,&id);         //cambiar si no se busca por ID
         if(autor_buscarID(array,sizeArray,id,&posicion)==-1)                                   //cambiar si no se busca por ID
         {
             printf("\nNo existe este ID");                                                          //cambiar si no se busca por ID
@@ -347,32 +347,23 @@ int autor_listar(Autor array[], int size)                      //cambiar autor
 }
 
 
-void autor_mock(Autor arrayAutor[], int size,int *contadorId)                      //cambiar autor
+void autor_mock(Autor arrayAutor[], int size)
 {
-
     arrayAutor[0].idUnico=0;
     arrayAutor[0].isEmpty=0;
-    strcpy(arrayAutor[0].apellido,"CCCCC");
-    strcpy(arrayAutor[0].nombre,"CCCCC");
-    *contadorId++;
-
+    strcpy(arrayAutor[0].apellido,"Uno");
+    strcpy(arrayAutor[0].nombre,"Autor");
     arrayAutor[1].idUnico=1;
     arrayAutor[1].isEmpty=0;
-    strcpy(arrayAutor[1].apellido,"AAAAA");
-    strcpy(arrayAutor[1].nombre,"AAAAA");
-    *contadorId++;
-
+    strcpy(arrayAutor[1].apellido,"Dos");
+    strcpy(arrayAutor[1].nombre,"Autor");
     arrayAutor[2].idUnico=2;
     arrayAutor[2].isEmpty=0;
-    strcpy(arrayAutor[2].apellido,"BBBBB");
-    strcpy(arrayAutor[2].nombre,"BBBBBB");
-    *contadorId++;
-
+    strcpy(arrayAutor[2].apellido,"Tres");
+    strcpy(arrayAutor[2].nombre,"Autor");
     arrayAutor[3].idUnico=3;
     arrayAutor[3].isEmpty=0;
-    strcpy(arrayAutor[3].apellido,"BBBBB");
-    strcpy(arrayAutor[3].nombre,"BBBBBB");
-    *contadorId++;
-
+    strcpy(arrayAutor[3].apellido,"Cuatro");
+    strcpy(arrayAutor[3].nombre,"Autor");
 }
 

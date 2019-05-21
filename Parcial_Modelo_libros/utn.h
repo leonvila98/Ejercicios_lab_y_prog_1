@@ -6,6 +6,9 @@ int isValidName(char* stringRecibido);
 int utn_getInt(char *mensaje,char *mensajeError,int minimo,int maximo,int reintentos,int *resultado);
 int isValidInt(int numero,int max,int min);
 
+int utn_getUnsignedInt(  char* msg,char* msgError,int minSize,int maxSize,int min,int max,int reintentos,int* input);
+int isValidNumber(char* stringRecibido);
+
 int utn_getSignedInt(char* msg, char* msgError, int minSize, int maxSize, int min, int max, int reintentos, int* input);
 int isValidSignedNumber(char* stringRecibido);
 

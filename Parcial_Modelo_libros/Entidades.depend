@@ -237,3 +237,83 @@
 
 1557444344 /home/alumno/Documentos/leonvila/Parcial_Modelo_libros/prestamo.h
 
+1558208642 source:/home/leon/Documentos/Ejercicios_lab_y_prog_1/Parcial_Modelo_libros/autor.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"autor.h"
+
+1558205291 /home/leon/Documentos/Ejercicios_lab_y_prog_1/Parcial_Modelo_libros/utn.h
+
+1558208306 /home/leon/Documentos/Ejercicios_lab_y_prog_1/Parcial_Modelo_libros/autor.h
+
+1557941348 source:/home/leon/Documentos/Ejercicios_lab_y_prog_1/Parcial_Modelo_libros/fantasma.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"fantasma.h"
+
+1557941348 /home/leon/Documentos/Ejercicios_lab_y_prog_1/Parcial_Modelo_libros/fantasma.h
+
+1558208642 source:/home/leon/Documentos/Ejercicios_lab_y_prog_1/Parcial_Modelo_libros/libro.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"libro.h"
+
+1558208306 /home/leon/Documentos/Ejercicios_lab_y_prog_1/Parcial_Modelo_libros/libro.h
+
+1558402718 source:/home/leon/Documentos/Ejercicios_lab_y_prog_1/Parcial_Modelo_libros/main.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"fantasma.h"
+	"autor.h"
+	"libro.h"
+	"socio.h"
+	"prestamo.h"
+
+1558406727 /home/leon/Documentos/Ejercicios_lab_y_prog_1/Parcial_Modelo_libros/socio.h
+
+1558208385 /home/leon/Documentos/Ejercicios_lab_y_prog_1/Parcial_Modelo_libros/prestamo.h
+	"socio.h"
+	"libro.h"
+
+1558402882 source:/home/leon/Documentos/Ejercicios_lab_y_prog_1/Parcial_Modelo_libros/prestamo.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"prestamo.h"
+	"autor.h"
+	"socio.h"
+	"libro.h"
+
+1558406762 source:/home/leon/Documentos/Ejercicios_lab_y_prog_1/Parcial_Modelo_libros/socio.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"socio.h"
+
+1557941348 source:/home/leon/Documentos/Ejercicios_lab_y_prog_1/Parcial_Modelo_libros/utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+
+1558406743 source:/home/leon/Documentos/Ejercicios_lab_y_prog_1/Parcial_Modelo_libros/informes.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"fantasma.h"
+	"socio.h"
+	"libro.h"
+	"autor.h"
+	"prestamo.h"
+

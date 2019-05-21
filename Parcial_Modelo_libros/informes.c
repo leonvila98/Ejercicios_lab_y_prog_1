@@ -2,7 +2,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "utn.h"
-#include "fantasma.h"  //cambiar por nombre entidad
+#include "fantasma.h"
+#include "socio.h"
+#include "libro.h"
+#include "autor.h"
+#include "prestamo.h"
 
 /** \brief Busca un valor y lista los elementos de dos arrays vinculados
 * \param arrayA Fantasma Array de Fantasma
@@ -30,7 +34,6 @@ int Informes_listarPorCriterio(Fantasma arrayA[], Fantasma arrayB[], int sizeI, 
                 printf("\nID A: %d\nID B: %d",
                        arrayA[i].idUnico,arrayB[j].idUnico);
             }
-
         }
         retorno=0;
     }
@@ -223,7 +226,6 @@ int Informes_listarAuxiliarOrdenar(Fantasma arrayA[], Fantasma arrayB[], int siz
 
                         contador++;
                         acumulado+=(arrayA[k].varInt*arrayB[j].varInt);
-
                     }
                 }
                 arrayAux[i].varInt=contador;                                    //completo el resto de los campos
@@ -235,6 +237,48 @@ int Informes_listarAuxiliarOrdenar(Fantasma arrayA[], Fantasma arrayB[], int siz
             }
         }
         retorno=0;
+    }
+    return retorno;
+}
+
+int Informes_listarSociosPorLibro(Socio *arraySocios,Libro *arrayLibros,
+                                  Prestamo *arrayPrestamos,int sizeSoc,
+                                  int sizeLib,int sizePre)
+{
+    typedef struct
+    {
+        int isEmpty;
+        int idSocios;
+    }AuxSocios;
+
+    int i=0;
+    int k=0;
+    int retorno=-1;
+    AuxSocios arrayId[sizeSoc];
+    int bufferIdLib;
+    int posLib;
+    int posSoc;
+    utn_getInt("\nIngrese ID del libro:","ERROR",0,sizeLib*3,2,&bufferIdLib);
+    if(!libro_buscarID(arrayLibros,sizeLib,bufferIdLib,&posLib))
+    {
+        while(i<sizePre)
+        {
+            if(bufferIdLib==arrayPrestamos[i].idLibro && arraySocios[i].isEmpty==0)
+            {
+                arrayId[i].idSocios=arrayPrestamos[i].idSocio;
+                arrayId[i].isEmpty=0;
+                retorno=0;
+            }
+            i++;
+        }
+    }
+    while(arrayId[k].isEmpty==0 && k<sizeSoc)
+    {
+        if(!socio_buscarID(arraySocios,sizeSoc,arrayId[k].idSocios,&posSoc))
+        {
+            socio_printPorId(arraySocios,sizeSoc,arrayId[k].idSocios);
+        }
+        k++;
     }
     return retorno;
 }

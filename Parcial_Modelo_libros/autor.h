@@ -27,5 +27,5 @@ int autor_bajaValorRepetidoInt(Autor array[], int sizeArray, int valorBuscado);
 int autor_modificar(Autor array[], int sizeArray);                                //cambiar autor
 int autor_ordenarPorDobleCriterio(Autor array[],int size, int orderFirst, int orderSecond);                                  //cambiar autor
 int autor_listar(Autor array[], int size);                      //cambiar autor
-void autor_mock(Autor arrayAutor[], int size,int *contadorId);                      //cambiar autor
+void autor_mock(Autor arrayAutor[], int size);                      //cambiar autor
 

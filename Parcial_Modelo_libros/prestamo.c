@@ -2,7 +2,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "utn.h"
-#include "prestamo.h" //cambiar por nombre entidad
+#include "prestamo.h"
+#include "autor.h"
+#include "socio.h"
+#include "libro.h"
 
 
 /** \brief  To indicate that all position in the array are empty,
@@ -91,7 +94,7 @@ int prestamo_buscarID(Prestamo array[], int size, int valorBuscado, int* posicio
 * \return int Return (-1) si no encuentra el valor buscado o Error [Invalid length or NULL pointer] - (0) si encuentra el valor buscado
 *
 */
-int prestamo_buscarInt(Prestamo array[], int size, int valorBuscado, int* posicion)                    //cambiar prestamo
+int prestamo_buscarInt(Prestamo array[], int size, int valorBuscado, int* posicion)
 {
     int retorno=-1;
     int i;
@@ -101,7 +104,7 @@ int prestamo_buscarInt(Prestamo array[], int size, int valorBuscado, int* posici
         {
             if(array[i].isEmpty==1)
                 continue;
-            else if(array[i].idLibro==valorBuscado)                                                   //cambiar campo idLibro
+            else if(array[i].idLibro==valorBuscado)
             {
                 retorno=0;
                 *posicion=i;
@@ -121,25 +124,36 @@ int prestamo_buscarInt(Prestamo array[], int size, int valorBuscado, int* posici
 * \return int Return (-1) si Error [largo no valido o NULL pointer o no hay posiciones vacias] - (0) si se agrega un nuevo elemento exitosamente
 *
 */
-int prestamo_alta(Prestamo array[], int size, int* contadorID)                          //cambiar prestamo
+int prestamo_alta(Prestamo array[],Socio arraySoc[],Libro arrayLib[], int size,int sizeSoc,int sizeLib)
 {
     int retorno=-1;
     int posicion;
-    if(array!=NULL && size>0 && contadorID!=NULL)
+    int posicionLib;
+    int posicionSoc;
+    int bufferIdLib;
+    int bufferIdSoc;
+    if(array!=NULL && size>0)
     {
-        if(prestamo_buscarEmpty(array,size,&posicion)==-1)                          //cambiar prestamo
+        if(prestamo_buscarEmpty(array,size,&posicion)==-1)
         {
             printf("\nNo hay lugares vacios");
         }
         else
         {
-            (*contadorID)++;
-            array[posicion].idUnico=*contadorID;                                                       //campo ID
-            array[posicion].isEmpty=0;
-            utn_getUnsignedInt("\ngetUnsignedInt: ","\nError",1,sizeof(int),1,10,1,&array[posicion].idLibro);           //mensaje + cambiar            //mensaje + cambiar campo varFloat
-            printf("\n Posicion: %d\n ID: %d\n idLibro: %d",
-                   posicion, array[posicion].idUnico,array[posicion].idLibro);
-            retorno=0;
+            utn_getInt("\nIngrese ID de libro: ","\nError",0,sizeLib*3,1,&bufferIdLib);
+            if(!libro_buscarID(arrayLib,sizeLib,bufferIdLib,&posicionLib))
+            {
+                utn_getInt("\nIngrese ID de socio: ","\nError",0,sizeSoc*5,1,&bufferIdSoc);
+                if(!socio_buscarID(arraySoc,sizeSoc,sizeSoc,&posicionSoc))
+                {
+                    array[posicion].idLibro=bufferIdLib;
+                    array[posicion].idSocio=bufferIdSoc;
+                    array[posicion].isEmpty=0;
+                    printf("\nID: %d\nID libro: %d\nID socio: %d\n*-----------------------",array[posicion].idUnico,
+                           array[posicion].idLibro,array[posicion].idSocio);
+                    retorno=0;
+                }
+            }
         }
     }
     return retorno;
@@ -153,7 +167,7 @@ int prestamo_alta(Prestamo array[], int size, int* contadorID)                  
 * \return int Return (-1) si Error [largo no valido o NULL pointer o no encuentra elementos con el valor buscado] - (0) si se elimina el elemento exitosamente
 *
 */
-int prestamo_baja(Prestamo array[], int sizeArray)                                      //cambiar prestamo
+int prestamo_baja(Prestamo array[], int sizeArray)
 {
     int retorno=-1;
     int posicion;
@@ -316,7 +330,7 @@ int prestamo_modificar(Prestamo array[], int sizeArray)                         
 * \return int Return (-1) si Error [largo no valido o NULL pointer] - (0) si se lista exitosamente
 *
 */
-int prestamo_listar(Prestamo array[], int size)                      //cambiar prestamo
+int prestamo_listar(Prestamo array[], int size)
 {
     int retorno=-1;
     int i;
@@ -324,11 +338,11 @@ int prestamo_listar(Prestamo array[], int size)                      //cambiar p
     {
         for(i=0;i<size;i++)
         {
-            if(array[i].isEmpty==1)
-                continue;
-            else
-                printf("\n Posicion: %d\n ID: %d\n idLibro: %d",
-                   i, array[i].idUnico,array[i].idLibro);      //cambiar todos
+            if(array[i].isEmpty==0)
+            {
+                printf("\nID: %d\nID libro: %d\nID socio: %d\n",
+                array[i].idUnico,array[i].idLibro,array[i].idSocio);
+            }
         }
         retorno=0;
     }
@@ -336,27 +350,24 @@ int prestamo_listar(Prestamo array[], int size)                      //cambiar p
 }
 
 
-void prestamo_mock(Prestamo arrayPrestamo[], int size,int *contadorId)                      //cambiar prestamo
+void prestamo_mock(Prestamo arrayPrestamo[], int size)
 {
     //*******************************************************************
     arrayPrestamo[0].idUnico=0;
     arrayPrestamo[0].isEmpty=0;
-    arrayPrestamo[0].idLibro=0;
-    *contadorId++;
-
+    arrayPrestamo[0].idLibro=3;
+    arrayPrestamo[0].idSocio=10;
     arrayPrestamo[1].idUnico=1;
     arrayPrestamo[1].isEmpty=0;
-    arrayPrestamo[1].idLibro=0;
-    *contadorId++;
-
+    arrayPrestamo[1].idLibro=3;
+    arrayPrestamo[1].idSocio=15;
     arrayPrestamo[2].idUnico=2;
     arrayPrestamo[2].isEmpty=0;
-    arrayPrestamo[2].idLibro=0;
-    *contadorId++;
-
+    arrayPrestamo[2].idLibro=3;
+    arrayPrestamo[2].idSocio=5;
     arrayPrestamo[3].idUnico=3;
     arrayPrestamo[3].isEmpty=0;
-    arrayPrestamo[3].idLibro=0;
-    contadorId++;
+    arrayPrestamo[3].idLibro=3;
+    arrayPrestamo[3].idSocio=20;
 }
 
