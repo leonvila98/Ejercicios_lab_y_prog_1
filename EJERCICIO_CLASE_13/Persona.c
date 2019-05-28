@@ -21,10 +21,10 @@ Persona* Per_newStr(char *id,char *nombre,char *apellido,char *estado)
 		pAuxPersona=Per_new();
 		if(pAuxPersona!=NULL)
 		{
-			if(!Per_setNombre(pAuxPersona,nombre)&&
-				Per_setApellido(pAuxPersona,apellido)&&
-				Per_setIdStr(pAuxPersona,id)&&
-				Per_setEstadoStr(pAuxPersona,estado))
+			if(	!Per_setNombre(pAuxPersona,nombre)&&
+				!Per_setApellido(pAuxPersona,apellido)&&
+				!Per_setIdStr(pAuxPersona,id)&&
+				!Per_setEstadoStr(pAuxPersona,estado))
 			{
 				retorno=pAuxPersona;
 			}
@@ -50,7 +50,7 @@ int Per_delete(Persona* this)
 int Per_setId(Persona* this, int id)
 {
     int retorno = -1;
-    if(this != NULL && id!=NULL && !isValidNumber(id))
+    if(this != NULL && !isValidInt(id,sizeof(id),0))
     {
         this->id = id;
         retorno = 0;
@@ -131,7 +131,7 @@ int Per_getApellido(Persona* this, char* resultado)
 int Per_setEstado(Persona* this, int estado)
 {
     int retorno = -1;
-    if(this != NULL && !isValidNumber(estado))
+    if(this != NULL && !isValidInt(estado,sizeof(estado),0))
     {
         this->estado = estado;
         retorno = 0;
