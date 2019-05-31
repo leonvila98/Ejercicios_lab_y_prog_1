@@ -1,18 +1,18 @@
 # depslib dependency file v1.0
-1559087080 source:/home/alumno/Documentos/leonvila/Ejercicios_lab_y_prog_1/EJERCICIO_CLASE_13/main.c
+1559264168 source:/home/alumno/Documentos/leonvila/Ejercicios_lab_y_prog_1/EJERCICIO_CLASE_13/main.c
 	<stdio.h>
 	<stdlib.h>
 	"Persona.h"
 
 1558648135 /home/alumno/Documentos/leonvila/Ejercicios_lab_y_prog_1/EJERCICIO_CLASE_13/empleado.h
 
-1559079765 source:/home/alumno/Documentos/leonvila/Ejercicios_lab_y_prog_1/EJERCICIO_CLASE_13/utn.c
+1559252135 source:/home/alumno/Documentos/leonvila/Ejercicios_lab_y_prog_1/EJERCICIO_CLASE_13/utn.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"utn.h"
 
-1559079765 /home/alumno/Documentos/leonvila/Ejercicios_lab_y_prog_1/EJERCICIO_CLASE_13/utn.h
+1559252135 /home/alumno/Documentos/leonvila/Ejercicios_lab_y_prog_1/EJERCICIO_CLASE_13/utn.h
 
 1558647763 source:/home/alumno/Documentos/leonvila/Ejercicios_lab_y_prog_1/EJERCICIO_CLASE_13/empleado.c
 	<stdio.h>
@@ -21,12 +21,12 @@
 	"empleado.h"
 	"utn.h"
 
-1559086189 source:/home/alumno/Documentos/leonvila/Ejercicios_lab_y_prog_1/EJERCICIO_CLASE_13/Persona.c
+1559264140 source:/home/alumno/Documentos/leonvila/Ejercicios_lab_y_prog_1/EJERCICIO_CLASE_13/Persona.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"Persona.h"
 	"utn.h"
 
-1559079765 /home/alumno/Documentos/leonvila/Ejercicios_lab_y_prog_1/EJERCICIO_CLASE_13/Persona.h
+1559263615 /home/alumno/Documentos/leonvila/Ejercicios_lab_y_prog_1/EJERCICIO_CLASE_13/Persona.h
 

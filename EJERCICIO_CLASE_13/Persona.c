@@ -147,13 +147,63 @@ int Per_setEstadoStr(Persona* this, char* estado)
     }
     return retorno;
 }
-int Per_getEstado(Persona* this, int* resultado)
+int Per_getEstado(Persona* this, char* resultado)
 {
     int retorno = -1;
     if(this != NULL && resultado != NULL)
     {
         *resultado = this->estado;
         retorno = 0;
+    }
+    return retorno;
+}
+
+int Per_parserPersonas(char* fileName,Persona* array,int size)
+{
+    int r;
+    int qtyLineas=0;
+    char aux[512];
+    char bufferId[4096];
+    char bufferNombre[4096];
+    char bufferApellido[4096];
+    char bufferEstado[4096];
+
+    FILE* pFile=fopen(fileName,"r");
+    if(pFile!=NULL)
+    {
+        fscanf(pFile,"%[^\n]\n",aux);  //salteo la primer linea
+        //fgets(aux,512,pFile);  //salteo la primer linea
+        do
+        {
+            r=fscanf(pFile,"%[^,],%[^,],%[^,],%[^\n]\n",bufferId,
+                                                        bufferNombre,
+                                                        bufferApellido,
+                                                        bufferEstado);
+            if(r==4)
+            {
+                printf("%s,%s,%s,%s\n", bufferId,
+                                    bufferNombre,
+                                    bufferApellido,
+                                    bufferEstado);
+                qtyLineas++;
+            }
+        }while(!feof(pFile));
+        fclose(pFile);
+    }
+    return qtyLineas;
+}
+int Per_initArray(Persona* arrayPer[],int lenPer)
+{
+    int i;
+    int retorno=-1;
+    if(arrayPer!=NULL&&lenPer>0)
+    {
+        for(i=0; i<lenPer; i++)
+        {
+            arrayPer[i]=NULL;
+        }
+        retorno=0;
+
     }
     return retorno;
 }

@@ -24,5 +24,6 @@ int Per_setApellido(Persona* this,char* apellido);
 int Per_getApellido(Persona* this, char* resultado);
 int Per_setEstado(Persona* this, int estado);
 int Per_setEstadoStr(Persona* this, char* estado);
-int Per_getEstado(Persona* this, int* resultado);
+int Per_getEstado(Persona* this, char* resultado);
+int Per_parserPersonas(char* fileName,Persona* array,int size);
 
