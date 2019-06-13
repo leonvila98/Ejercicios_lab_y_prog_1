@@ -1,0 +1,49 @@
+static int addNode(LinkedList* this, int nodeIndex,void* pElement)
+{
+    int returnAux = -1;
+	int sizeLl;
+	Node* pNodeAux;
+	Node* pNodeAnterior;
+	Node* pNodeProximo;
+	Node* pNewNode;
+    sizeLl = ll_len(this);
+
+    if(	this != NULL &&
+		nodeIndex>=0 &&
+		nodeIndex<=sizeLl)
+	{
+		if(getNode(this,nodeIndex) != NULL)
+		{
+			pNewNode = (Node*)malloc(sizeof(Node));
+			if(nodeIndex == 0)//reemplazo firstNode
+			{
+				pNewNode->pElement = pElement;//guardo el elemento en el newNode
+				pNodeAux = this->pFirstNode;//guardo el firstNode anteriror
+                pNewNode->pNextNode = pNodeAux;//asigno el nextNode del newNode
+				this->pFirstNode = pNewNode;//asigno el firstNode de la LL
+				this->size=sizeLl++;//incremento el size de la LL.
+				returnAux = 0;
+			}
+			else if(nodeIndex==sizeLl)
+            {
+				pNewNode->pElement = pElement;//guardo el elemento en el newNode
+                pNodeAnterior=getNode(this,nodeIndex);//obtengo el nodeAnterior de newNode
+                pNewNode->pNextNode = NULL;//asigno el nextNode del newNode
+                pNodeAnterior->pNextNode=pNewNode;//asigno el nextNode del nodeAnterior
+				this->size=sizeLl++;//incremento el size de la LL.
+				returnAux = 0;
+            }
+			else
+			{
+				pNewNode->pElement = pElement;//guardo el elemento en el newNode
+				pNodeProximo=getNode(this,nodeIndex);//obtengo el nextNode de newNode
+				pNodeAnterior=getNode(this,nodeIndex-1);//obtengo el nodeAnterior de newNode
+                pNewNode->pNextNode = pNodeProximo;//asigno el nextNode del newNode
+                pNodeAnterior->pNextNode=pNewNode;//asigno el nextNode del nodeAnterior
+				this->size=sizeLl++;//incremento el size de la LL.
+				returnAux = 0;
+			}
+		}
+	}
+    return returnAux;
+}
