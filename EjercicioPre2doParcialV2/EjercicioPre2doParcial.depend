@@ -1,0 +1,57 @@
+# depslib dependency file v1.0
+1560893803 source:/home/alumno/Documentos/leonvila/EjercicioPre2doParcialV2/Controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Employee.h"
+	"parser.h"
+	"utn.h"
+
+1560904501 /home/alumno/Documentos/leonvila/EjercicioPre2doParcialV2/LinkedList.h
+
+1560901757 /home/alumno/Documentos/leonvila/EjercicioPre2doParcialV2/Employee.h
+
+1560893803 /home/alumno/Documentos/leonvila/EjercicioPre2doParcialV2/parser.h
+
+1560893803 /home/alumno/Documentos/leonvila/EjercicioPre2doParcialV2/utn.h
+
+1560902303 source:/home/alumno/Documentos/leonvila/EjercicioPre2doParcialV2/Employee.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Employee.h"
+	"utn.h"
+
+1560905623 source:/home/alumno/Documentos/leonvila/EjercicioPre2doParcialV2/LinkedList.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1560900817 source:/home/alumno/Documentos/leonvila/EjercicioPre2doParcialV2/parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Employee.h"
+	"utn.h"
+
+1560893803 source:/home/alumno/Documentos/leonvila/EjercicioPre2doParcialV2/utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+
+1560905526 source:/home/alumno/Documentos/leonvila/EjercicioPre2doParcialV2/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Employee.h"
+	"parser.h"
+	"Controller.h"
+
+1560893803 /home/alumno/Documentos/leonvila/EjercicioPre2doParcialV2/Controller.h
+
