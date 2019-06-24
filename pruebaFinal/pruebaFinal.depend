@@ -1,0 +1,73 @@
+# depslib dependency file v1.0
+1561052458 source:/home/leon/Documentos/Ejercicios_lab_y_prog_1/pruebaFinal/LinkedList.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1561052458 /home/leon/Documentos/Ejercicios_lab_y_prog_1/pruebaFinal/LinkedList.h
+
+1561401968 source:/home/leon/Documentos/Ejercicios_lab_y_prog_1/pruebaFinal/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Cliente.h"
+	"parser.h"
+	"utn.h"
+
+1561393125 source:/home/leon/Documentos/Ejercicios_lab_y_prog_1/pruebaFinal/parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Cliente.h"
+	"Venta.h"
+	"utn.h"
+
+1561060346 /home/leon/Documentos/Ejercicios_lab_y_prog_1/pruebaFinal/Fantasma.h
+
+1561055068 /home/leon/Documentos/Ejercicios_lab_y_prog_1/pruebaFinal/utn.h
+
+1561067202 source:/home/leon/Documentos/Ejercicios_lab_y_prog_1/pruebaFinal/utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+
+1561067761 source:/home/leon/Documentos/Ejercicios_lab_y_prog_1/pruebaFinal/Cliente.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Cliente.h"
+	"utn.h"
+
+1561067761 /home/leon/Documentos/Ejercicios_lab_y_prog_1/pruebaFinal/Cliente.h
+
+1561402096 source:/home/leon/Documentos/Ejercicios_lab_y_prog_1/pruebaFinal/Controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Cliente.h"
+	"Venta.h"
+	"parser.h"
+	"utn.h"
+
+1561390158 /home/leon/Documentos/Ejercicios_lab_y_prog_1/pruebaFinal/parser.h
+
+1561401968 /home/leon/Documentos/Ejercicios_lab_y_prog_1/pruebaFinal/Controller.h
+
+1561393671 source:/home/leon/Documentos/Ejercicios_lab_y_prog_1/pruebaFinal/Venta.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Venta.h"
+	"utn.h"
+
+1561393710 /home/leon/Documentos/Ejercicios_lab_y_prog_1/pruebaFinal/Venta.h
+
