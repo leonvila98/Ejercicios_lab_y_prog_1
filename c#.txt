@@ -1,0 +1,103 @@
+using System;
+using System.Collections;
+
+public class Orquesta
+{
+	public string nombre;
+	public string lugar;
+	public string tipoOrquesta;
+	
+	public Orquesta()
+	{
+		this.nombre="no tiene nombre";
+		this.lugar="no tiene lugar";
+		this.tipoOrquesta="no tiene tipo";
+	}
+	public Orquesta(string nombre,string lugar,string tipo)
+	{
+		this.nombre = nombre;
+		this.lugar = lugar;
+		this.tipoOrquesta = tipo;
+	}
+	public void imprimirOrquesta()
+	{
+		Console.WriteLine("Nombre {0},Lugar {1},Tipo {2}",this.nombre,this.lugar,this.tipoOrquesta);
+		Console.ReadLine();
+	}
+}
+
+public class Instrumento
+{
+	public string nombre;
+	public string tipoInstrumento;
+	
+	public Instrumento()
+	{
+		this.nombre="no tiene nombre";
+		this.tipoInstrumento="no tiene tipo";
+	}
+	public Instrumento(string nombre,string tipo)
+	{
+		this.nombre = nombre;
+		this.tipoInstrumento = tipo;
+	}
+	public void imprimirInstrumento()
+	{
+		Console.WriteLine("Nombre {0},Tipo {1}",this.nombre,this.tipoInstrumento);
+		Console.ReadLine();
+	}
+}
+
+public class Musico
+{
+	public string nombre;
+	public string apellido;
+	public string edad;
+	public Orquesta orquesta;
+	public Instrumento instrumento;
+	
+	public Musico()
+	{
+		this.nombre="no tiene nombre";
+		this.apellido="no tiene";
+		this.edad="no tiene";
+	}
+	public Musico(string nombre,string apellido,string edad,Orquesta orquesta,Instrumento instrumento)
+	{
+		this.nombre=nombre;
+		this.apellido=apellido;
+		this.edad=edad;
+		this.orquesta=orquesta;
+		this.instrumento=instrumento;
+	}
+	public void imprimirMusico()
+	{
+		Console.WriteLine("Nombre {0},Apellido{1},Edad{2}",this.nombre,this.apellido,this.edad);
+		this.orquesta.imprimirOrquesta();
+		this.instrumento.imprimirInstrumento();
+		Console.ReadLine();//espera un caracter(como enter)para continuar 
+	}
+}
+					
+public class Program
+{
+	public static void Main()
+	{
+		Orquesta orquesta2 = new Orquesta("Orquesta2","lugar5","sinfonica");
+		Orquesta orquesta1 = new Orquesta("Orquesta1","lugar2","sinfonica");
+		Instrumento instrumento1 = new Instrumento("Instrumento1","Viento-Madera");
+		Musico musico1 = new Musico("Pepe","Dominguez","30",orquesta2,instrumento1);
+		//orquesta2.imprimirOrquesta();
+		//instrumento1.imprimirInstrumento();
+		//musico1.imprimirMusico();
+		
+		ArrayList listaOrquesta = new ArrayList();//hago una arraylist
+		listaOrquesta.Add(orquesta2);//agrego orquesta2 al arraylist
+		listaOrquesta.Add(orquesta1);//agrego orquesta1 al arraylist
+		
+		foreach(Orquesta elemento in listaOrquesta)//imprimo cada elemnto de la lista
+		{
+			elemento.imprimirOrquesta();
+		}
+	}
+}
